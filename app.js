@@ -1,4 +1,7 @@
-const tokens = require('./nietzsche.json');
+const rl = require('readline-sync');
+const fileName = rl.question('Enter json File: ');
+
+const tokens = require(`./${fileName || 'nietzsche'}.json`);
 
 setInterval(() => {
   generateSentence();

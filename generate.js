@@ -1,7 +1,9 @@
 const fs = require('fs');
+const rl = require('readline-sync');
 
-let ws = fs.createWriteStream('nietzsche.json');
-let txt = fs.readFileSync('./nietzsche.csv', 'utf8');
+const fileName = rl.question('Enter csv name: ');
+let ws = fs.createWriteStream(`${fileName}.json`);
+let txt = fs.readFileSync(`./${fileName}.csv`, 'utf8');
 
 let tokens = {};
 
